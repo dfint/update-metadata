@@ -1,7 +1,7 @@
 [
   {
     "language": "Русский",
-    "version": 3227861066,
+    "version": 2581549785,
     "csv": "https://raw.githubusercontent.com/dfint/hub/main/store/dict.csv",
     "curses": "https://raw.githubusercontent.com/dfint/hub/main/store/curses.png",
     "encoding": "https://raw.githubusercontent.com/dfint/hub/main/store/encoding.toml"
