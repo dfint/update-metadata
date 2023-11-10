@@ -2,8 +2,8 @@
   {
     "language": "Русский",
     "version": 2581549785,
-    "csv": "https://raw.githubusercontent.com/dfint/hub/main/store/dict.csv",
-    "curses": "https://raw.githubusercontent.com/dfint/hub/main/store/curses.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/hub/main/store/encoding.toml"
+    "csv": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/dict.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/curses.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/encoding.toml"
   }
 ]
