@@ -1,7 +1,7 @@
 [
   {
     "language": "Русский",
-    "version": 2581549785,
+    "version": 2993224018,
     "csv": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/russian.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/fonts/russian.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/encodings/russian.toml"
