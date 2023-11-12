@@ -4,13 +4,13 @@
     "version": 1540725269,
     "lib": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/hook.so",
     "config": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/config.toml",
-    "offsets": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/50.10_classic_linux64.toml"
+    "offsets": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/offsets/50.10_classic_linux64.toml"
   },
   {
     "df": 1695006380,
     "version": 3293691423,
     "lib": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/hook.dll",
     "config": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/config.toml",
-    "offsets": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/50.10_steam_win64.toml"
+    "offsets": "https://raw.githubusercontent.com/dfint/update-metadata/main/store/offsets/50.10_steam_win64.toml"
   }
 ]
