@@ -10,9 +10,15 @@ manifest = json.loads(file.read_text(encoding="utf-8"))
 
 for i, item in enumerate(manifest):
     try:
-        data = requests.get(item["csv"]).content
-        data += requests.get(item["font"]).content
-        data += requests.get(item["encoding"]).content
+        res1 = requests.get(item["csv"])
+        res1.raise_for_status()
+        data = res1.content
+        res2 = requests.get(item["font"])
+        res2.raise_for_status()
+        data = res2.content
+        res3 = requests.get(item["encoding"])
+        res3.raise_for_status()
+        data += res3.content
         checksum = binascii.crc32(data)
     except:
         print(f"Fialed on recalculation {item['language']}")
