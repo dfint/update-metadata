@@ -23,7 +23,7 @@ for i, item in enumerate(manifest):
     except:
         print(f"Fialed on recalculation {item['language']}")
     else:
-        if item["version"] != checksum:
-            manifest[i]["version"] = checksum
+        if item["checksum"] != checksum:
+            manifest[i]["checksum"] = checksum
 
 file.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
