@@ -1,7 +1,7 @@
 [metadata]
 name = "dfint localization hook offsets"
-version = "50.10 classic linux"
-checksum = 0x53F38AA3
+version = "50.11 classic linux"
+checksum = 0x0193a321
 
 [offsets]
 utf_input = 0x38d

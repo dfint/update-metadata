@@ -1,7 +1,7 @@
 [metadata]
 name = "dfint localization hook offsets"
-version = "50.10 classic linux"
-checksum = 0x53F38AA3
+version = "50.10 itch.io linux"
+checksum = 0x80609999
 
 [offsets]
 utf_input = 0x38d

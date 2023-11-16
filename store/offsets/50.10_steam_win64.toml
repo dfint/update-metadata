@@ -6,7 +6,6 @@ checksum = 0x6507BEAC
 [offsets]
 string_copy_n = 0xBAD0
 string_append_n = 0xBC10
-convert_ulong_to_string = 0x3C14E0
 addst = 0x801230
 addst_top = 0x801310
 addst_flag = 0x800FA0
