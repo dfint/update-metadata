@@ -15,6 +15,9 @@ jobs:
         with:
           python-version: 3.11
 
+      - name: Install dep
+        run: pip install requests
+
       - name: Run update script
         run: python3 ./automation/dict_manifest_update.py
 
