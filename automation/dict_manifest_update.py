@@ -15,7 +15,7 @@ for i, item in enumerate(manifest):
         data = res1.content
         res2 = requests.get(item["font"])
         res2.raise_for_status()
-        data = res2.content
+        data += res2.content
         res3 = requests.get(item["encoding"])
         res3.raise_for_status()
         data += res3.content
