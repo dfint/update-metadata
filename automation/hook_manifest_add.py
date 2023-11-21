@@ -1,10 +1,18 @@
 import json
-from binascii import crc32
-from pathlib import Path
 import sys
+from binascii import crc32
+from functools import cache
+from pathlib import Path
 
 import requests
 import toml
+
+
+@cache
+def get_from_url(url: str) -> bytes:
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.content
 
 
 base_dir = Path(__file__).parent.parent  # base directory of the repository
@@ -15,10 +23,10 @@ def update_or_append(df_checksum: int, checksum: int, lib: str, config: str, off
     hook_manifest = json.loads(hook_json_path.read_text())
     for i, item in enumerate(hook_manifest):
         if item["df"] == df_checksum:
-            hook_manifest[i]["checksum"] = checksum
-            hook_manifest[i]["lib"] = lib
-            hook_manifest[i]["config"] = config
-            hook_manifest[i]["offsets"] = offsets
+            item["checksum"] = checksum
+            item["lib"] = lib
+            item["config"] = config
+            item["offsets"] = offsets
             hook_json_path.write_text(json.dumps(hook_manifest, indent=2))
             return
 
@@ -36,15 +44,13 @@ def update_or_append(df_checksum: int, checksum: int, lib: str, config: str, off
 
 def main(lib: str, config: str, offsets: str):
     try:
-        res_hook = requests.get(lib)
-        res_hook.raise_for_status()
-        res_config = requests.get(config)
-        res_config.raise_for_status()
-        res_offsets = requests.get(offsets)
-        res_offsets.raise_for_status()
-        offsets_data = toml.loads(res_offsets.content.decode(encoding="utf-8"))
+        res_hook = get_from_url(lib)
+        res_config = get_from_url(config)
+        res_offsets = get_from_url(offsets)
+        
+        offsets_data = toml.loads(res_offsets.decode(encoding="utf-8"))
         df_checksum = offsets_data["metadata"]["checksum"]
-        checksum = crc32(res_hook.content + res_config.content + res_offsets.content)
+        checksum = crc32(res_hook + res_config + res_offsets)
         update_or_append(df_checksum, checksum, lib, config, offsets)
     except Exception as ex:
         raise ex
@@ -54,7 +60,6 @@ def run_with_config():
     config = toml.load(base_dir / "automation/hook_metadata_update.toml")
     for lib_variant in config.values():
         for offset_url in lib_variant["offset_urls"]:
-            print(lib_variant["lib_url"], lib_variant["config_url"], offset_url)
             main(lib_variant["lib_url"], lib_variant["config_url"], offset_url)
 
 
