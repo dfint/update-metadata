@@ -4,6 +4,6 @@
     "checksum": 3497739314,
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp1251.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp1251.toml"
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp1251_ru.toml"
   }
 ]
