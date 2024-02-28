@@ -4,9 +4,10 @@ from pathlib import Path
 
 import requests
 
-file = Path("./metadata/dict.json")
+base_dir = Path(__file__).parent.parent  # base directory of the repository
+dict_json_path = base_dir / "metadata/dict.json"
 
-manifest = json.loads(file.read_text(encoding="utf-8"))
+manifest = json.loads(dict_json_path.read_text(encoding="utf-8"))
 
 for i, item in enumerate(manifest):
     try:
@@ -26,4 +27,4 @@ for i, item in enumerate(manifest):
         if item["checksum"] != checksum:
             manifest[i]["checksum"] = checksum
 
-file.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+dict_json_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
