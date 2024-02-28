@@ -24,7 +24,7 @@ for i, item in enumerate(manifest):
     except Exception as ex:
         print(f"Fialed on recalculation {item['language']}:\n", ex)
     else:
-        if item["checksum"] != checksum:
+        if item.get("checksum") != checksum:
             manifest[i]["checksum"] = checksum
 
 dict_json_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
