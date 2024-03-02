@@ -1,4 +1,4 @@
-# Updte Data
+# Update Data
 
 Data backend for [dfint installer](https://github.com/dfint/installer).
 
