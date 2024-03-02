@@ -43,17 +43,14 @@ def update_or_append(df_checksum: int, checksum: int, lib: str, config: str, off
 
 
 def main(lib: str, config: str, offsets: str):
-    try:
-        res_hook = get_from_url(lib)
-        res_config = get_from_url(config)
-        res_offsets = get_from_url(offsets)
-        
-        offsets_data = toml.loads(res_offsets.decode(encoding="utf-8"))
-        df_checksum = offsets_data["metadata"]["checksum"]
-        checksum = crc32(res_hook + res_config + res_offsets)
-        update_or_append(df_checksum, checksum, lib, config, offsets)
-    except Exception as ex:
-        raise ex
+    res_hook = get_from_url(lib)
+    res_config = get_from_url(config)
+    res_offsets = get_from_url(offsets)
+    
+    offsets_data = toml.loads(res_offsets.decode(encoding="utf-8"))
+    df_checksum = offsets_data["metadata"]["checksum"]
+    checksum = crc32(res_hook + res_config + res_offsets)
+    update_or_append(df_checksum, checksum, lib, config, offsets)
 
 
 def run_with_config():
