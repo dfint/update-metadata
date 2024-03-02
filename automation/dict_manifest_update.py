@@ -22,7 +22,7 @@ for i, item in enumerate(manifest):
         data += res3.content
         checksum = binascii.crc32(data)
     except Exception as ex:
-        print(f"Fialed on recalculation {item['language']}:\n", ex)
+        print(f"Failed on recalculation {item['language']}:\n", ex)
     else:
         if item.get("checksum") != checksum:
             manifest[i]["checksum"] = checksum
