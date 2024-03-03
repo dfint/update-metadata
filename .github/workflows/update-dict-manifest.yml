@@ -7,6 +7,7 @@ on:
     paths:
       - 'automation/dict_manifest_update.py'
       - 'store/encodings/**'
+      - 'metadata/dict.json'
       - '.github/workflows/update-dict-manifest.yml'
 
 jobs:
