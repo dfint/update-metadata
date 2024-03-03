@@ -1,30 +1,37 @@
 [
   {
     "language": "Русский",
-    "checksum": 1284314560,
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp1251.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp1251.toml"
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp1251.toml",
+    "checksum": 1284314560
   },
   {
     "language": "Русский (cp866)",
-    "checksum": 4274897661,
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian%20(cp866)/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866.toml"
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866.toml",
+    "checksum": 4274897661
   },
   {
     "language": "Deutsch",
-    "checksum": 2788724415,
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/German/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml"
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
+    "checksum": 2788724415
+  },
+  {
+    "language": "Español",
+    "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Spanish/dfint_dictionary.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850es.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
+    "checksum": 1787725610
   },
   {
     "language": "English",
-    "checksum": 2004676737,
     "csv": "https://raw.githubusercontent.com/dfint/update-data/main/store/csv/en.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml"
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
+    "checksum": 2004676737
   }
 ]
