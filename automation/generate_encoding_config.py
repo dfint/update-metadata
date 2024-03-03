@@ -27,37 +27,41 @@ def get_lower_map(letters: Iterable[str]) -> Iterator[tuple[str, str]]:
             yield letter, low
 
 
+class State(NamedTuple):
+    from_code: int
+    to_code: int
+    from_letter: str
+    to_letter: str
+    
+    @property
+    def diff(self):
+        return self.to_code - self.from_code
+    
+    def is_plus_one(self, other):
+        return abs(other.from_code - self.from_code) <= 1 and abs(other.to_code - self.to_code) <= 1
+
+
+def format_result(state_start: State, state_end: State) -> str:
+    if state_end == state_start:
+        return f"{state_end.from_code} = {state_start.diff} # {state_end.from_letter} -> {state_end.to_letter}"
+    else:
+        return (
+            f"\"{state_start.from_code}:{state_end.from_code}\" = {state_start.diff} "
+            f"# {state_start.from_letter}-{state_end.from_letter} -> {state_start.to_letter}-{state_end.to_letter}"
+        )
+
+
 def group_mapping(mapping: Iterable[tuple[str, str]], encoding: str) -> Iterator[str]:
-    class State(NamedTuple):
-        from_code: int
-        to_code: int
-        from_letter: str
-        to_letter: str
-        
-        @property
-        def diff(self):
-            return to_code - from_code
-        
-        def is_plus_one(self, other):
-            return abs(other.from_code - self.from_code) <= 1 and abs(other.to_code - self.to_code) <= 1
-    
-    def format_result(state_start: State, state_end: State) -> str:
-        if state_end == state_start:
-            return f"{state_end.from_code} = {state_end.diff} # {state_end.from_letter} -> {state_end.to_letter}"
-        else:
-            return (
-                f"\"{state_start.from_code}:{state_end.from_code}\" = {state_end.diff} "
-                f"# {state_start.from_letter}-{state_end.from_letter} -> {state_start.to_letter}-{state_end.to_letter}"
-            )
-    
     state_start: Optional[State] = None
     prev_state: Optional[State] = None
     
     for from_letter, to_letter in mapping:
-        to_code = to_letter.encode(encoding)[0]
-        from_code = from_letter.encode(encoding)[0]
-        
-        current_state = State(from_code, to_code, from_letter, to_letter)
+        current_state = State(
+            from_code=from_letter.encode(encoding)[0],
+            to_code=to_letter.encode(encoding)[0],
+            from_letter=from_letter,
+            to_letter=to_letter,
+        )
         
         if state_start is None:
             state_start = current_state
@@ -130,4 +134,5 @@ def main(encoding: str):
 
 
 if __name__ == "__main__":
-    main("cp866")
+    import sys
+    main(sys.argv[1])
