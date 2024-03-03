@@ -21,6 +21,10 @@ encoding = "cp866u"
 246 = 1 # І -> і
 248 = 1 # Ї -> ї
 
+[maps.uppercase]
+
+[maps.lowercase]
+
 [maps.simplify]
 "129|150|151|154|163" = 117 # üûùÜú -> u
 "152" = 121 # ÿ -> y
