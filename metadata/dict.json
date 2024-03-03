@@ -24,14 +24,14 @@
     "language": "Español",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Spanish/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
     "checksum": 1787725610
   },
   {
     "language": "Italiano",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Italian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
-    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
     "checksum": 375152671
   },
   {
