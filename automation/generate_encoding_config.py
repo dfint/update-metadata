@@ -39,20 +39,16 @@ def group_mapping(mapping: Iterable[tuple[str, str]], encoding: str) -> Iterator
             return to_code - from_code
         
         def is_plus_one(self, other):
-            if not isinstance(other, self.__class__):
-                return False
-            
-            if abs(other.from_code - self.from_code) > 1:
-                return False
-            
-            return self.diff == other.diff
+            return abs(other.from_code - self.from_code) <= 1 and abs(other.to_code - self.to_code) <= 1
     
-    def format_result(prev_state: State, state_start: State) -> str:
-        if prev_state == state_start:
-            return f"{prev_state.from_code} = {prev_state.diff} # {prev_state.from_letter} -> {prev_state.to_letter}"
+    def format_result(state_start: State, state_end: State) -> str:
+        if state_end == state_start:
+            return f"{state_end.from_code} = {state_end.diff} # {state_end.from_letter} -> {state_end.to_letter}"
         else:
-            return (f"\"{state_start.from_code}:{prev_state.from_code}\" = {prev_state.diff} "
-            f"# {state_start.from_letter}-{prev_state.from_letter} -> {state_start.to_letter}-{prev_state.to_letter}")
+            return (
+                f"\"{state_start.from_code}:{state_end.from_code}\" = {state_end.diff} "
+                f"# {state_start.from_letter}-{state_end.from_letter} -> {state_start.to_letter}-{state_end.to_letter}"
+            )
     
     state_start: Optional[State] = None
     prev_state: Optional[State] = None
@@ -68,13 +64,13 @@ def group_mapping(mapping: Iterable[tuple[str, str]], encoding: str) -> Iterator
             prev_state = current_state
 
         if not current_state.is_plus_one(prev_state):
-            yield format_result(prev_state, state_start)
+            yield format_result(state_start, prev_state)
             state_start = current_state
         
         prev_state = current_state
     
     if prev_state:
-        yield format_result(prev_state, state_start)
+        yield format_result(state_start, prev_state)
 
 
 def get_simplified_map(letters: Iterable[str]) -> Iterator[tuple[str, str]]:
