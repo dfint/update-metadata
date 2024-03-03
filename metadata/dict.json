@@ -14,6 +14,12 @@
     "checksum": 2320300181
   },
   {
+    "language": "Українська",
+    "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Ukrainian/dfint_dictionary.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866u.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866u.toml"
+  },
+  {
     "language": "Deutsch",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/German/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
