@@ -3,8 +3,8 @@ from unidecode import unidecode
 from collections import defaultdict
 
 
-def get_letters(encoding: str) -> Iterator[str]:
-    for i in range(256):
+def get_letters(encoding: str, min_code: int=0) -> Iterator[str]:
+    for i in range(min_code, 256):
         try:
             char = bytes([i]).decode(encoding)
             if char.isalpha():
@@ -118,6 +118,15 @@ def main(encoding: str):
         from_codes = "|".join([str(letter.encode(encoding)[0]) for letter in from_letters])
         to_code = to_letter.encode(encoding)[0]
         print(f""""{from_codes}" = {to_code} # {from_letters} -> {to_letter}""")
+    
+    print()
+    
+    print("[maps.utf]")
+    letters = get_letters(encoding, 128)
+    for letter in letters:
+        code = letter.encode(encoding)[0]
+        utf8_code = int.from_bytes(letter.encode("utf-8"), byteorder="little")
+        print(f"{utf8_code} = {code} # {letter}")
 
 
 if __name__ == "__main__":
