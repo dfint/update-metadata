@@ -6,7 +6,8 @@ on:
     branches: [ main ]
     paths:
       - 'automation/dict_manifest_update.py'
-      - 'store/encodings/**'
+      - 'store/encodings/*'
+      - 'store/fonts/*'
       - 'metadata/dict.json'
       - '.github/workflows/update-dict-manifest.yml'
 
