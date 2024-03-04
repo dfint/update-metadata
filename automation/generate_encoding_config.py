@@ -1,5 +1,4 @@
 from typing import Iterable, Iterator, Mapping, NamedTuple, Optional
-from unidecode import unidecode
 from collections import defaultdict
 
 
@@ -77,23 +76,6 @@ def group_mapping(mapping: Iterable[tuple[str, str]], encoding: str) -> Iterator
         yield format_result(state_start, prev_state)
 
 
-def get_simplified_map(letters: Iterable[str]) -> Iterator[tuple[str, str]]:
-    for letter in letters:
-        simplified = unidecode(letter)
-        if simplified != letter and simplified in letters:
-            yield letter, simplified
-
-
-def get_grouped_simplified(letters: Iterable[str]) -> Mapping[str, str]:
-    simplified_map = get_simplified_map(letters)
-    
-    grouped_simplified = defaultdict(list)
-    for letter, simplified in simplified_map:
-        grouped_simplified[simplified.lower()].append(letter)
-    
-    return grouped_simplified
-
-
 def main(encoding: str):
     print("[metadata]")
     print(f"encoding = \"{encoding}\"")
@@ -113,16 +95,6 @@ def main(encoding: str):
     for line in group_mapping(lower_map, encoding):
         print(line)
 
-    print()
-    
-    print("[maps.simplify]")
-    simplified = get_grouped_simplified(letters)
-    simplified = {"".join(from_letters): to_letter for to_letter, from_letters in simplified.items()}
-    for from_letters, to_letter in simplified.items():
-        from_codes = "|".join([str(letter.encode(encoding)[0]) for letter in from_letters])
-        to_code = to_letter.encode(encoding)[0]
-        print(f""""{from_codes}" = {to_code} # {from_letters} -> {to_letter}""")
-    
     print()
     
     print("[maps.utf]")
