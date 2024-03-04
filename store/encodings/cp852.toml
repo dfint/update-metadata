@@ -87,6 +87,10 @@ encoding = "cp852"
 237 = -1 # Ý -> ý
 252 = 1 # Ř -> ř
 
+[maps.uppercase]
+
+[maps.lowercase]
+
 [maps.simplify]
 "129|150|151|154|163" = 117 # üûùÜú -> u
 "152" = 121 # ÿ -> y
