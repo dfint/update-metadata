@@ -18,7 +18,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Ukrainian%20(cp866u)/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866u.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866u.toml",
-    "checksum": 190115721
+    "checksum": 642262132
   },
   {
     "language": "Deutsch",
@@ -39,7 +39,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Italian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
-    "checksum": 3595472193
+    "checksum": 3357911208
   },
   {
     "language": "English",
