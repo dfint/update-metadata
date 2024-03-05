@@ -1,5 +1,8 @@
 from typing import Iterable, Iterator, Mapping, NamedTuple, Optional
 from collections import defaultdict
+from alternative_encodings import cp859
+
+cp859.register()
 
 
 def get_letters(encoding: str, min_code: int=0) -> Iterator[str]:
