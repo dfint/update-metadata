@@ -1,17 +1,17 @@
 [dll]
-lib_url = "https://github.com/dfint/df-steam-hook-rs/releases/download/0.1.1/hook_0.1.1.dll"
+lib_url = "https://github.com/dfint/df-steam-hook-rs/releases/download/0.1.2/hook_0.1.2.dll"
 config_url = "https://raw.githubusercontent.com/dfint/update-data/main/store/config.toml"
 offset_urls = [
-    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.11_steam_win64.toml",
-    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.11_itchio_win64.toml",
-    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.11_classic_win64.toml",
+    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.12_steam_win64.toml",
+    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.12_itchio_win64.toml",
+    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.12_classic_win64.toml",
 ]
 
 [so]
-lib_url = "https://github.com/dfint/df-steam-hook-rs/releases/download/0.1.1/hook_0.1.1.so"
+lib_url = "https://github.com/dfint/df-steam-hook-rs/releases/download/0.1.2/hook_0.1.2.so"
 config_url = "https://raw.githubusercontent.com/dfint/update-data/main/store/config.toml"
 offset_urls = [
-    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.11_steam_linux64.toml",
-    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.11_itchio_linux64.toml",
-    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.11_classic_linux64.toml",
+    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.12_steam_linux64.toml",
+    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.12_itchio_linux64.toml",
+    "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.12_classic_linux64.toml",
 ]
