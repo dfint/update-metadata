@@ -6,6 +6,7 @@ checksum = 0x65E8286D
 [offsets]
 string_copy_n = 0xD550
 string_append_n = 0xD690
+std_string_ctor = 0x1AA90
 addst = 0x81A970
 addst_top = 0x81AA50
 addst_flag = 0x81A880
