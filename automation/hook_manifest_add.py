@@ -6,14 +6,7 @@ from pathlib import Path
 
 import requests
 import toml
-
-
-@cache
-def get_from_url(url: str) -> bytes:
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.content
-
+from utils import get_from_url
 
 base_dir = Path(__file__).parent.parent  # base directory of the repository
 hook_json_path = base_dir / "metadata/hook.json"

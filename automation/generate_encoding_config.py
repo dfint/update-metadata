@@ -1,5 +1,6 @@
-from typing import Iterable, Iterator, Mapping, NamedTuple, Optional
 from collections import defaultdict
+from typing import Iterable, Iterator, Mapping, NamedTuple, Optional
+
 from alternative_encodings import cp859
 
 cp859.register()
