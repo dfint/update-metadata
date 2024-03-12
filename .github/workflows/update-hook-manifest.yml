@@ -1,0 +1,35 @@
+name: Update hook manifest
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'automation/hook_manifest_update.py'
+      - 'store/encodings/*'
+      - 'store/fonts/*'
+      - 'metadata/hook.json'
+      - '.github/workflows/update-hook-manifest.yml'
+
+jobs:
+  hook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Install dep
+        run: pip install requests
+
+      - name: Run update script
+        run: python3 automation/hook_manifest_update.py
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9.1.4
+        with:
+          author_name: github-actions[bot]
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: "Update hook manifest"
