@@ -61,5 +61,12 @@
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
     "checksum": 2004676737
+  },
+  {
+    "language": "Português (Brasil)",
+    "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Portuguese%20(Brazil)/dfint_dictionary.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
+    "checksum": 2300144357
   }
 ]
