@@ -47,7 +47,7 @@ def main(lib: str, config: str, offsets: str):
 
 
 def run_with_config():
-    config = toml.load(base_dir / "automation/hook_metadata_update.toml")
+    config = toml.load(base_dir / "automation/hook_manifest_add.toml")
     for lib_variant in config.values():
         for offset_url in lib_variant["offset_urls"]:
             main(lib_variant["lib_url"], lib_variant["config_url"], offset_url)
