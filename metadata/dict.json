@@ -4,14 +4,14 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp1251.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp1251.toml",
-    "checksum": 4180233739
+    "checksum": 2711471202
   },
   {
     "language": "Русский (cp866)",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian%20(cp866)/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866.toml",
-    "checksum": 2031914864
+    "checksum": 277701975
   },
   {
     "language": "Українська",
