@@ -46,14 +46,14 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Italian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
-    "checksum": 2767527994
+    "checksum": 1232452548
   },
   {
     "language": "Polski",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Polish/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp852.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp852.toml",
-    "checksum": 3985406269
+    "checksum": 3489316883
   },
   {
     "language": "English",
