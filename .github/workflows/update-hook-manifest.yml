@@ -4,6 +4,7 @@ on:
     branches: [ main ]
     paths:
       - 'automation/hook_manifest_update.py'
+      - 'automation/requirements.txt'
       - 'store/encodings/*'
       - 'store/fonts/*'
       - 'metadata/hook.json'
@@ -22,7 +23,7 @@ jobs:
           python-version: 3.11
 
       - name: Install dep
-        run: pip install requests
+        run: pip install -r automation/requirements.txt
 
       - name: Run update script
         run: python3 automation/hook_manifest_update.py

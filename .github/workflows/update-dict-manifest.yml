@@ -6,6 +6,7 @@ on:
     branches: [ main ]
     paths:
       - 'automation/dict_manifest_update.py'
+      - 'automation/requirements.txt'
       - 'store/encodings/*'
       - 'store/fonts/*'
       - 'metadata/dict.json'
@@ -24,7 +25,7 @@ jobs:
           python-version: 3.11
 
       - name: Install dep
-        run: pip install requests
+        run: pip install -r automation/requirements.txt
 
       - name: Run update script
         run: python3 automation/dict_manifest_update.py
