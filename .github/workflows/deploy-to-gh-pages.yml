@@ -1,0 +1,33 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-to-gh-pages.yml'
+      - 'metadata/*'
+      - 'store/*'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Prepare to deploy
+      run: |
+        mkdir deploy
+        cp -r metadata deploy/metadata
+        cp -r store deploy/store
+
+    - name: Deploy to Github Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        git-config-name: github-actions[bot]
+        git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
+        folder: deploy
+        single-commit: true
