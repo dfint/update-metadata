@@ -23,6 +23,7 @@ jobs:
         mkdir deploy
         cp -r metadata deploy/metadata
         cp -r store deploy/store
+        touch deploy/.nojekyll
 
     - name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@v4
