@@ -6,6 +6,7 @@ offset_urls = [
     "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.13_itchio_win64.toml",
     "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.13_classic_win64.toml",
 ]
+dfhooks_url = "https://github.com/DFHack/dfhooks/releases/download/v1/dfhooks.dll"
 
 [so]
 lib_url = "https://github.com/dfint/df-steam-hook-rs/releases/download/0.1.3/hook_0.1.3.so"
@@ -15,3 +16,4 @@ offset_urls = [
     "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.13_itchio_linux64.toml",
     "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/50.13_classic_linux64.toml",
 ]
+dfhooks_url = "https://github.com/DFHack/dfhooks/releases/download/v1/libdfhooks.so"

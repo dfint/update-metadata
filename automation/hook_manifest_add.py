@@ -10,56 +10,76 @@ from utils import get_from_url
 
 base_dir = Path(__file__).parent.parent  # base directory of the repository
 hook_json_path = base_dir / "metadata/hook.json"
+hook_v2_json_path = base_dir / "metadata/hook_v2.json"
 
 
-def update_or_append(df_checksum: int, checksum: int, lib: str, config: str, offsets: str):
-    hook_manifest = json.loads(hook_json_path.read_text())
+def update_or_append(
+    manifest_path: str, df_checksum: int, checksum: int, lib: str, config: str, offsets: str, dfhooks: str | None
+):
+    hook_manifest = json.loads(manifest_path.read_text())
     for i, item in enumerate(hook_manifest):
         if item["df"] == df_checksum:
             item["checksum"] = checksum
             item["lib"] = lib
             item["config"] = config
             item["offsets"] = offsets
-            hook_json_path.write_text(json.dumps(hook_manifest, indent=2))
+            if dfhooks:
+                item["dfhooks"] = dfhooks
+            manifest_path.write_text(json.dumps(hook_manifest, indent=2))
             return
 
-    hook_manifest.append(
-        {
-            "df": df_checksum,
-            "checksum": checksum,
-            "lib": lib,
-            "config": config,
-            "offsets": offsets,
-        }
-    )
-    hook_json_path.write_text(json.dumps(hook_manifest, indent=2))
+    if dfhooks:
+        hook_manifest.append(
+            {
+                "df": df_checksum,
+                "checksum": checksum,
+                "lib": lib,
+                "config": config,
+                "offsets": offsets,
+                "dfhooks": dfhooks,
+            }
+        )
+    else:
+        hook_manifest.append(
+            {
+                "df": df_checksum,
+                "checksum": checksum,
+                "lib": lib,
+                "config": config,
+                "offsets": offsets,
+            }
+        )
+    manifest_path.write_text(json.dumps(hook_manifest, indent=2))
 
 
-def main(lib: str, config: str, offsets: str):
+def main(lib: str, config: str, offsets: str, dfhooks: str):
     res_hook = get_from_url(lib)
     res_config = get_from_url(config)
     res_offsets = get_from_url(offsets)
-    
+    res_dfhooks = get_from_url(dfhooks)
+
     offsets_data = toml.loads(res_offsets.decode(encoding="utf-8"))
     df_checksum = offsets_data["metadata"]["checksum"]
     checksum = crc32(res_hook + res_config + res_offsets)
-    update_or_append(df_checksum, checksum, lib, config, offsets)
+    checksum_v2 = crc32(res_hook + res_config + res_offsets + res_dfhooks)
+    update_or_append(hook_json_path, df_checksum, checksum, lib, config, offsets, None)
+    update_or_append(hook_v2_json_path, df_checksum, checksum_v2, lib, config, offsets, dfhooks)
 
 
 def run_with_config():
     config = toml.load(base_dir / "automation/hook_manifest_add.toml")
     for lib_variant in config.values():
         for offset_url in lib_variant["offset_urls"]:
-            main(lib_variant["lib_url"], lib_variant["config_url"], offset_url)
+            main(lib_variant["lib_url"], lib_variant["config_url"], offset_url, lib_variant["dfhooks_url"])
 
 
 def run():
     args = sys.argv[1:]
-    
+
     if not args:
         run_with_config()
         return
-    
+
     if len(args) < 3:
         raise Exception("Not enought args")
 
