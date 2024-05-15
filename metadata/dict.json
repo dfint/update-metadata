@@ -63,6 +63,13 @@
     "checksum": 1687285952
   },
   {
+    "language": "Japanese (Romaji)",
+    "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Japanese (Romaji)/dfint_dictionary.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
+    "checksum": 0
+  },
+  {
     "language": "English",
     "csv": "https://raw.githubusercontent.com/dfint/update-data/main/store/csv/en.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
