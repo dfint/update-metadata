@@ -65,10 +65,13 @@ jobs:
     needs: prepare
     steps:
     - name: Check credentials
-      env: 
-        aws_key_id: ${{ secrets.AWS_KEY_ID }}
-      if: ${{ env.aws_key_id == '' }}
-      run: gh run cancel ${{ github.run_id }}
+      env:
+        AWS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      if: ${{ env.AWS_KEY_ID == '' }}
+      run: |
+        gh run cancel ${{ github.run_id }}
+        gh run watch ${{ github.run_id }}
 
     - name: Download artifact
       uses: actions/download-artifact@v3
