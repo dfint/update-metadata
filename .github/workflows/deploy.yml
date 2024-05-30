@@ -42,7 +42,7 @@ jobs:
 
   deploy_to_gh_pages:
     runs-on: ubuntu-latest
-    requires: prepare
+    needs: prepare
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v3
@@ -60,7 +60,7 @@ jobs:
 
   deploy_to_s3:
     runs-on: ubuntu-latest
-    requires: prepare
+    needs: prepare
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v3
