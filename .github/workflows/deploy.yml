@@ -71,7 +71,6 @@ jobs:
         path: deploy
 
     - name: Upload to S3
-      if: secrets.AWS_KEY_ID != ''
       uses: shallwefootball/s3-upload-action@v1.3.3
       with:
         aws_key_id: ${{ secrets.AWS_KEY_ID }}
