@@ -25,57 +25,53 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Prepare to deploy
-      run: |
-        mkdir deploy
-        cp -r metadata deploy/metadata
-        cp -r store deploy/store
-        touch deploy/.nojekyll
-    
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: update-data
-        path: deploy
+      - name: Prepare to deploy
+        run: |
+          mkdir deploy
+          cp -r metadata deploy/metadata
+          cp -r store deploy/store
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: update-data
+          path: deploy
 
   deploy_to_gh_pages:
     runs-on: ubuntu-latest
     needs: prepare
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-    - uses: actions/checkout@v4
-
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: update-data
-        path: deploy
-
-    - name: Deploy to Github Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        git-config-name: github-actions[bot]
-        git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
-        folder: deploy
-        single-commit: true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
 
   deploy_to_s3:
     runs-on: ubuntu-latest
     needs: prepare
     steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: update-data
-        path: deploy
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: update-data
+          path: deploy
 
-    - name: Upload to S3
-      uses: shallwefootball/s3-upload-action@v1.3.3
-      with:
-        aws_key_id: ${{ secrets.AWS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-        aws_bucket: ${{ vars.AWS_BUCKET }}
-        source_dir: deploy
-        destination_dir: update-data
-        endpoint: ${{ vars.S3_ENDPOINT }}
+      - name: Upload to S3
+        uses: shallwefootball/s3-upload-action@v1.3.3
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ vars.AWS_BUCKET }}
+          source_dir: deploy
+          destination_dir: update-data
+          endpoint: ${{ vars.S3_ENDPOINT }}
