@@ -21,7 +21,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/French/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp859.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp859.toml",
-    "checksum": 626932142
+    "checksum": 2152563970
   },
   {
     "language": "Italiano",
@@ -37,7 +37,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Polish/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp852.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp852.toml",
-    "checksum": 2366453129
+    "checksum": 1859803669
   },
   {
     "language": "Português (Brasil)",
@@ -68,7 +68,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Ukrainian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866u.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866u.toml",
-    "checksum": 3068177583
+    "checksum": 2417916744
   },
   {
     "language": "Japanese (Romaji)",
