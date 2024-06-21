@@ -1,16 +1,16 @@
 import json
 import sys
 from binascii import crc32
-from functools import cache
 from pathlib import Path
 
-import requests
 import toml
 from utils import get_from_url
 
 base_dir = Path(__file__).parent.parent  # base directory of the repository
 hook_json_path = base_dir / "metadata/hook.json"
 hook_v2_json_path = base_dir / "metadata/hook_v2.json"
+offsets_json_path = base_dir / "store/offsets"
+offsets_base_url = "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/"
 
 
 def update_or_append(
@@ -55,22 +55,22 @@ def update_or_append(
 def main(lib: str, config: str, offsets: str, dfhooks: str):
     res_hook = get_from_url(lib)
     res_config = get_from_url(config)
-    res_offsets = get_from_url(offsets)
+    res_offsets = (offsets_json_path / offsets).read_bytes()
     res_dfhooks = get_from_url(dfhooks)
 
     offsets_data = toml.loads(res_offsets.decode(encoding="utf-8"))
     df_checksum = offsets_data["metadata"]["checksum"]
     checksum = crc32(res_hook + res_config + res_offsets)
     checksum_v2 = crc32(res_hook + res_config + res_offsets + res_dfhooks)
-    update_or_append(hook_json_path, df_checksum, checksum, lib, config, offsets, None)
-    update_or_append(hook_v2_json_path, df_checksum, checksum_v2, lib, config, offsets, dfhooks)
+    update_or_append(hook_json_path, df_checksum, checksum, lib, config, offsets_base_url + offsets, None)
+    update_or_append(hook_v2_json_path, df_checksum, checksum_v2, lib, config, offsets_base_url + offsets, dfhooks)
 
 
 def run_with_config():
     config = toml.load(base_dir / "automation/hook_manifest_add.toml")
     for lib_variant in config.values():
-        for offset_url in lib_variant["offset_urls"]:
-            main(lib_variant["lib_url"], lib_variant["config_url"], offset_url, lib_variant["dfhooks_url"])
+        for offset_file in lib_variant["offset_files"]:
+            main(lib_variant["lib_url"], lib_variant["config_url"], offset_file, lib_variant["dfhooks_url"])
 
 
 def run():
