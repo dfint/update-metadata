@@ -1,5 +1,4 @@
 import json
-import sys
 from binascii import crc32
 from pathlib import Path
 from typing import Any, NamedTuple
