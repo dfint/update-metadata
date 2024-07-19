@@ -1,7 +1,7 @@
 [metadata]
 name = "dfint localization hook offsets"
-version = "51.01-beta18 steam linux"
-checksum = 0xc209cd12
+version = "51.01-beta19 steam linux"
+checksum = 0x92a1d47e
 
 [offsets]
 utf_input = 0x38d
