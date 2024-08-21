@@ -1,5 +1,13 @@
 [
   {
+    "language": "Беларуская",
+    "code": "be",
+    "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Belarusian/dfint_dictionary.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866.toml",
+    "checksum": 3634022907
+  },
+  {
     "language": "Deutsch",
     "code": "de",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/German/dfint_dictionary.csv",
