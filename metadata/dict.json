@@ -29,7 +29,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/French/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp859.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp859.toml",
-    "checksum": 2490860755
+    "checksum": 3121217326
   },
   {
     "language": "Italiano",
