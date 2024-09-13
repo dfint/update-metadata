@@ -1,3 +1,10 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "requests",
+#     "toml",
+# ]
+# ///
 import json
 from binascii import crc32
 from pathlib import Path
