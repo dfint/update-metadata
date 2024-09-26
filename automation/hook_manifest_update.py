@@ -28,12 +28,10 @@ def main():
                 if item.get("dfhooks"):
                     data += get_from_url(item["dfhooks"])
                 checksum = binascii.crc32(data)
+                item["checksum"] = checksum
             except Exception as ex:
                 print(f"Failed on recalculation {item["df"]=}")
                 raise
-            else:
-                if item.get("checksum") != checksum:
-                    item["checksum"] = checksum
 
         path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
 
