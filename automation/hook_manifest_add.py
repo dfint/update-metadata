@@ -17,7 +17,7 @@ base_dir = Path(__file__).parent.parent  # base directory of the repository
 
 hook_json_path = base_dir / "metadata/hook.json"
 hook_v2_json_path = base_dir / "metadata/hook_v2.json"
-offsets_json_path = base_dir / "store/offsets"
+offsets_toml_path = base_dir / "store/offsets"
 config_path = base_dir / "store"
 
 offsets_base_url = "https://raw.githubusercontent.com/dfint/update-data/main/store/offsets/"
@@ -65,7 +65,7 @@ def update_or_append(manifest_path: str, config_item: ConfigItem):
 def main(hook_lib_url: str, config_file_name: str, offsets_file_name: str, dfhooks_url: str):
     res_hook = get_from_url(hook_lib_url)
     res_config = (config_path / config_file_name).read_bytes()
-    res_offsets = (offsets_json_path / offsets_file_name).read_bytes()
+    res_offsets = (offsets_toml_path / offsets_file_name).read_bytes()
     res_dfhooks = get_from_url(dfhooks_url)
 
     offsets_data = toml.loads(res_offsets.decode(encoding="utf-8"))
