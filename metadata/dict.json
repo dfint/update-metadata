@@ -5,7 +5,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Belarusian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866.toml",
-    "checksum": 3634022907
+    "checksum": 2221558694
   },
   {
     "language": "Deutsch",
@@ -13,7 +13,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/German/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
-    "checksum": 1113986485
+    "checksum": 1032760166
   },
   {
     "language": "Español",
@@ -21,7 +21,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Spanish/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
-    "checksum": 2353219764
+    "checksum": 2118845287
   },
   {
     "language": "Français",
@@ -29,7 +29,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/French/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp859.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp859.toml",
-    "checksum": 2189298146
+    "checksum": 2326755123
   },
   {
     "language": "Italiano",
@@ -37,7 +37,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Italian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
-    "checksum": 625981833
+    "checksum": 2936908602
   },
   {
     "language": "Polski",
@@ -45,7 +45,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Polish/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp852.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp852.toml",
-    "checksum": 1368599207
+    "checksum": 242591925
   },
   {
     "language": "Português (Brasil)",
@@ -53,7 +53,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Portuguese%20(Brazil)/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
-    "checksum": 2717809006
+    "checksum": 1238175313
   },
   {
     "language": "Русский",
@@ -61,14 +61,14 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866.toml",
-    "checksum": 1864771291
+    "checksum": 1464028447
   },
   {
     "language": "Русский (cp1251)",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Russian%20(cp1251)/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp1251.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp1251.toml",
-    "checksum": 3750658769
+    "checksum": 2774495326
   },
   {
     "language": "Українська",
@@ -76,7 +76,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Ukrainian/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp866u.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp866u.toml",
-    "checksum": 328146233
+    "checksum": 3955693751
   },
   {
     "language": "Japanese (Romaji)",
@@ -84,7 +84,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Japanese (Romaji)/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp437.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp437.toml",
-    "checksum": 1557853022
+    "checksum": 937655853
   },
   {
     "language": "English",
