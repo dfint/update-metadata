@@ -8,6 +8,14 @@
     "checksum": 2221558694
   },
   {
+    "language": "Čeština",
+    "code": "cs",
+    "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Czech/dfint_dictionary.csv",
+    "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp852.png",
+    "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp852.toml",
+    "checksum": 3244253427
+  },
+  {
     "language": "Deutsch",
     "code": "de",
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/German/dfint_dictionary.csv",
