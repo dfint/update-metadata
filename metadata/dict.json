@@ -29,7 +29,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/Spanish/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp850.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp850.toml",
-    "checksum": 4223332940
+    "checksum": 2809698502
   },
   {
     "language": "Français",
@@ -37,7 +37,7 @@
     "csv": "https://raw.githubusercontent.com/dfint/autobuild/main/translation_build/csv_with_objects/French/dfint_dictionary.csv",
     "font": "https://raw.githubusercontent.com/dfint/update-data/main/store/fonts/cp859.png",
     "encoding": "https://raw.githubusercontent.com/dfint/update-data/main/store/encodings/cp859.toml",
-    "checksum": 3837984201
+    "checksum": 3559934488
   },
   {
     "language": "Italiano",
