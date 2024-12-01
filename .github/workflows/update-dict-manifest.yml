@@ -10,6 +10,15 @@ on:
       - 'store/fonts/*'
       - 'metadata/dict.json'
       - '.github/workflows/update-dict-manifest.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'automation/dict_manifest_update.py'
+      - 'store/encodings/*'
+      - 'store/fonts/*'
+      - 'metadata/dict.json'
+      - '.github/workflows/update-dict-manifest.yml'
 
 jobs:
   dict:
@@ -32,6 +41,7 @@ jobs:
         run: uv run automation/dict_manifest_update.py
 
       - name: Commit changes
+        if: ${{ !contains(fromJSON('["pull_request"]'), github.event_name) }}
         uses: EndBug/add-and-commit@v9.1.4
         with:
           author_name: github-actions[bot]
