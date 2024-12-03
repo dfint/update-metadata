@@ -1,7 +1,7 @@
 [dll]
 lib = "0.1.3/hook_0.1.3.dll"
 offset_files = [
-    "51.01-beta26_steam_win64.toml",
+    "51.01-beta27_steam_win64.toml",
     # "50.13_itchio_win64.toml",
     # "50.14_classic_win64.toml",
 ]
@@ -10,7 +10,7 @@ dfhooks = "v1/dfhooks.dll"
 [so]
 lib = "0.1.3/hook_0.1.3.so"
 offset_files = [
-    "51.01-beta26_steam_linux64.toml",
+    "51.01-beta27_steam_linux64.toml",
     # "50.13_itchio_linux64.toml",
     # "50.14_classic_linux64.toml",
 ]
