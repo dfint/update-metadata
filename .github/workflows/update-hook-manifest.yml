@@ -6,6 +6,7 @@ on:
       - 'automation/hook_manifest_update.py'
       - 'store/encodings/*'
       - 'store/fonts/*'
+      - 'store/offsets/*'
       - 'metadata/hook.json'
       - '.github/workflows/update-hook-manifest.yml'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - 'automation/hook_manifest_update.py'
       - 'store/encodings/*'
       - 'store/fonts/*'
+      - 'store/offsets/*'
       - 'metadata/hook.json'
       - '.github/workflows/update-hook-manifest.yml'
 
