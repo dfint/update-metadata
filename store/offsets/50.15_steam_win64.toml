@@ -1,6 +1,6 @@
 [metadata]
 name = "dfint localization hook offsets"
-version = "51.15 steam win64"
+version = "50.15 steam win64"
 checksum = 0x6759D35D
 
 [offsets]
