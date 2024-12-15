@@ -7,7 +7,7 @@ on:
       - 'store/encodings/*'
       - 'store/fonts/*'
       - 'store/offsets/*'
-      - 'metadata/hook.json'
+      - 'metadata/hook_v2.json'
       - '.github/workflows/update-hook-manifest.yml'
   pull_request:
     branches:
@@ -17,7 +17,7 @@ on:
       - 'store/encodings/*'
       - 'store/fonts/*'
       - 'store/offsets/*'
-      - 'metadata/hook.json'
+      - 'metadata/hook_v2.json'
       - '.github/workflows/update-hook-manifest.yml'
 
 jobs:
