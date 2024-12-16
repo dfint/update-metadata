@@ -46,16 +46,9 @@ class ConfigItem(NamedTuple):
         }
 
 
-def update_or_append(manifest_path: str, config_item: ConfigItem) -> None:
+def add_info_to_manifest(manifest_path: str, config_item: ConfigItem) -> None:
     hook_manifest = json.loads(manifest_path.read_text())
-    for item in hook_manifest:
-        if item["df"] == config_item.df_checksum:
-            item.update(config_item.dict())
-            break
-    else:
-        # Item with the same checksum not found, add new one
-        hook_manifest.append(config_item.dict())
-
+    hook_manifest.append(config_item.dict())
     manifest_path.write_text(json.dumps(hook_manifest, indent=2))
 
 
@@ -69,7 +62,7 @@ def main(hook_lib_url: str, config_file_name: str, offsets_file_name: str, dfhoo
     df_checksum = offsets_data["metadata"]["checksum"]
     payload_checksum = crc32(res_hook + res_config + res_offsets + res_dfhooks)
 
-    update_or_append(
+    add_info_to_manifest(
         hook_json_path,
         ConfigItem(
             df_checksum,
