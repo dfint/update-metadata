@@ -3,12 +3,14 @@
 # dependencies = [
 #     "requests",
 #     "toml",
+#     "natsort",
 # ]
 # ///
 import json
 from binascii import crc32
 from pathlib import Path
 from typing import Any, NamedTuple
+from natsort import natsorted
 
 import toml
 from utils import get_from_url
@@ -44,7 +46,7 @@ class ConfigItem(NamedTuple):
         }
 
 
-def update_or_append(manifest_path: str, config_item: ConfigItem):
+def update_or_append(manifest_path: str, config_item: ConfigItem) -> None:
     hook_manifest = json.loads(manifest_path.read_text())
     for item in hook_manifest:
         if item["df"] == config_item.df_checksum:
@@ -57,7 +59,7 @@ def update_or_append(manifest_path: str, config_item: ConfigItem):
     manifest_path.write_text(json.dumps(hook_manifest, indent=2))
 
 
-def main(hook_lib_url: str, config_file_name: str, offsets_file_name: str, dfhooks_url: str):
+def main(hook_lib_url: str, config_file_name: str, offsets_file_name: str, dfhooks_url: str) -> None:
     res_hook = get_from_url(hook_lib_url)
     res_config = (config_path / config_file_name).read_bytes()
     res_offsets = (offsets_toml_path / offsets_file_name).read_bytes()
@@ -80,17 +82,34 @@ def main(hook_lib_url: str, config_file_name: str, offsets_file_name: str, dfhoo
     )
 
 
-def run_with_config():
+def get_file_name(url: str) -> str:
+    return url.rpartition("/")[2]
+
+
+def get_offsets_in_json() -> set[str]:
+    json_data = json.loads(hook_json_path.read_text(encoding="utf-8"))
+    return {get_file_name(item["offsets"]) for item in json_data}
+
+
+def autoadd() -> None:
+    json_data = hook_json_path.read_text(encoding="utf-8")
+    offset_files_in_json = get_offsets_in_json()
+    offset_files = {file.name for file in offsets_toml_path.glob("*.toml")}
+    missing_offsets = natsorted(offset_files - offset_files_in_json)
+    
+    print("New offset files:", missing_offsets)
     config = toml.load(base_dir / "automation/hook_manifest_add.toml")
-    for lib_variant in config.values():
-        for offset_file in lib_variant["offset_files"]:
-            main(
-                lib_download_base_url + lib_variant["lib"],
-                "config.toml",
-                offset_file,
-                dfhooks_download_base_url + lib_variant["dfhooks"]
-            )
+    
+    for file_name in missing_offsets:
+        operating_system = Path(file_name).stem.rpartition("_")[2]
+        lib_variant = config[operating_system]
+        main(
+            lib_download_base_url + lib_variant["lib"],
+            "config.toml",
+            file_name,
+            dfhooks_download_base_url + lib_variant["dfhooks"]
+        )
 
 
 if __name__ == "__main__":
-    run_with_config()
+    autoadd()
